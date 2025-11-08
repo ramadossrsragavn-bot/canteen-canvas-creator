@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 import Hero from "@/components/Hero";
 import MenuCard from "@/components/MenuCard";
+import { CartSheet } from "@/components/CartSheet";
 import { menuItems } from "@/data/menuData";
 
 const Index = () => {
@@ -11,6 +12,7 @@ const Index = () => {
 
   const categories = [
     { value: "all", label: "All Items", color: "primary" },
+    { value: "combo", label: "Combo Meals", color: "accent" },
     { value: "breakfast", label: "Breakfast", color: "breakfast" },
     { value: "lunch", label: "Lunch", color: "lunch" },
     { value: "dinner", label: "Dinner", color: "dinner" },
@@ -48,7 +50,7 @@ const Index = () => {
           </div>
 
           <Tabs defaultValue="all" className="w-full">
-            <TabsList className="grid w-full grid-cols-5 mb-8 h-auto">
+            <TabsList className="grid w-full grid-cols-3 md:grid-cols-6 mb-8 h-auto gap-2">
               {categories.map((category) => (
                 <TabsTrigger
                   key={category.value}
@@ -85,6 +87,8 @@ const Index = () => {
           </Tabs>
         </div>
       </div>
+
+      <CartSheet />
 
       <footer className="bg-card border-t border-border py-8 mt-12">
         <div className="container mx-auto px-4 text-center">

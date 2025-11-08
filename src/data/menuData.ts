@@ -3,10 +3,11 @@ export interface MenuItem {
   name: string;
   description: string;
   price: number;
-  category: 'breakfast' | 'lunch' | 'dinner' | 'snacks';
+  category: 'breakfast' | 'lunch' | 'dinner' | 'snacks' | 'combo';
   image: string;
   isPopular?: boolean;
   isVeg: boolean;
+  originalPrice?: number;
 }
 
 export const menuItems: MenuItem[] = [
@@ -164,6 +165,60 @@ export const menuItems: MenuItem[] = [
     price: 50,
     category: 'snacks',
     image: '/src/assets/poha.jpg',
+    isVeg: true,
+  },
+
+  // Combo Meals
+  {
+    id: 'c1',
+    name: 'Breakfast Combo',
+    description: 'Aloo Paratha + Poha + Chai. Perfect morning meal combo',
+    price: 60,
+    originalPrice: 80,
+    category: 'combo',
+    image: '/src/assets/aloo-paratha.jpg',
+    isPopular: true,
+    isVeg: true,
+  },
+  {
+    id: 'c2',
+    name: 'Lunch Special Combo',
+    description: 'Chicken Biryani + Raita + Soft Drink. Complete lunch package',
+    price: 130,
+    originalPrice: 155,
+    category: 'combo',
+    image: '/src/assets/chicken-biryani.jpg',
+    isPopular: true,
+    isVeg: false,
+  },
+  {
+    id: 'c3',
+    name: 'Veg Thali Combo',
+    description: 'Dal + Paneer Curry + 3 Rotis + Rice + Dessert',
+    price: 110,
+    originalPrice: 140,
+    category: 'combo',
+    image: '/src/assets/paneer-butter-masala.jpg',
+    isVeg: true,
+  },
+  {
+    id: 'c4',
+    name: 'Snack Attack Combo',
+    description: 'Samosa (2pcs) + French Fries + Cold Drink',
+    price: 70,
+    originalPrice: 90,
+    category: 'combo',
+    image: '/src/assets/samosa.jpg',
+    isVeg: true,
+  },
+  {
+    id: 'c5',
+    name: 'Evening Meal Combo',
+    description: 'Masala Dosa + Coffee + Vada. Perfect evening combo',
+    price: 75,
+    originalPrice: 95,
+    category: 'combo',
+    image: '/src/assets/masala-dosa.jpg',
     isVeg: true,
   },
 ];
